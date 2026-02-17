@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/configs/theme/app_colors.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
 import 'package:e_commerce/core/helper/spacing/spacing.dart';
 import 'package:e_commerce/presentation/auth/bloc/cubit/age_selection_cubit.dart';
