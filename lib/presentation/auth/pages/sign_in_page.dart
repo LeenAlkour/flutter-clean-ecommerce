@@ -116,6 +116,7 @@ class SignInPage extends StatelessWidget {
       color: Theme.of(context).colorScheme.secondary,
       radius: 4,
       onPressed: () {
+        print('Signing in with Google...');
         context.read<ButtonStateCubit>().execute(
           usecase: SigninWithGoogleUseCase(),
         );

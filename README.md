@@ -64,15 +64,6 @@ The application structure is driven by the following core business logic (Use Ca
 
 This project follows the **Clean Architecture** pattern to ensure scalability, testability, and maintainability.
 
-```mermaid
-graph TD
-    UI[Presentation Layer (UI)] --> BLoC[BLoC (State Management)]
-    BLoC --> UseCase[Domain Layer (Use Cases)]
-    UseCase --> Repo[Domain Layer (Repository Interface)]
-    Repo --> DataRepo[Data Layer (Repository Impl)]
-    DataRepo --> Remote[Remote Data Source (API/Firebase)]
-    DataRepo --> Local[Local Data Source (Database/Cache)]
-```
 
 ### Key Components
 
@@ -91,25 +82,8 @@ graph TD
 | **freezed**            | Code Generation        | Reduces boilerplate for immutable classes and unions. Essential for BLoC states and events.     |
 | **flutter_screenutil** | Responsiveness         | Adapts UI to different screen sizes and pixel densities easily.                                 |
 
-## 🧪 Testing & Quality
 
-To ensure code quality, we use `flutter_test` along with `bloc_test` and `mocktail`.
 
-### Running Tests
-
-Run all unit and widget tests:
-
-```bash
-flutter test
-```
-
-Generate a coverage report:
-
-```bash
-flutter test --coverage
-genhtml coverage/lcov.info -o coverage/html
-open coverage/html/index.html
-```
 
 ## 📱 Screenshots
 
@@ -117,7 +91,7 @@ open coverage/html/index.html
 | :----------------------------------: | :----------------------------------------: | :----------------------------------: |
 | ![Home](assets/screenshots/home.png) | ![Details](assets/screenshots/details.png) | ![Cart](assets/screenshots/cart.png) |
 
-> _Note: Screenshots are placeholders. Please add actual images to `assets/screenshots/`._
+
 
 ## 📂 Project Structure
 
@@ -165,8 +139,8 @@ lib/
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/e_commerce.git
-   cd e_commerce
+   git clone https://github.com/LeenAlkour/flutter-clean-ecommerce.git
+   cd flutter-clean-ecommerce
    ```
 
 2. **Install dependencies:**
