@@ -1,10 +1,10 @@
 import 'package:e_commerce/common/bloc/button/cubit/button_state_cubit.dart';
-import 'package:e_commerce/common/dialogs.dart';
+import 'package:e_commerce/common/widgets/dialogs.dart';
 import 'package:e_commerce/common/widgets/button/custom_reactive_button.dart';
 import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/domain/auth/usecases/send_password_reset_email.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,6 +1,6 @@
 import 'package:e_commerce/common/bloc/button/cubit/button_state_cubit.dart';
 import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
 import 'package:e_commerce/presentation/product_detail/bloc/cubit/favorite_button_cubit.dart'
     show FavoriteIconCubit;

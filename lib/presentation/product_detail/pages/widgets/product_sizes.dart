@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/configs/theme/app_colors.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
 import 'package:e_commerce/presentation/product_detail/bloc/cubit/product_size_selection_cubit.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:e_commerce/domain/auth/usecases/is_logged_in.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'authenticat_state.dart';

@@ -1,6 +1,6 @@
 import 'package:e_commerce/common/widgets/button/custom_button.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

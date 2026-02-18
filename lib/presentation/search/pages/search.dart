@@ -7,7 +7,7 @@ import 'package:e_commerce/core/extensions/localization_extension.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
 import 'package:e_commerce/domain/product/usecase/get_products_by_title.dart';
 import 'package:e_commerce/presentation/home/widgets/search_field.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

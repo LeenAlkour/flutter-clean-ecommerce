@@ -5,7 +5,8 @@ import 'package:e_commerce/data/category/source/category_firebase_source.dart';
 import 'package:e_commerce/data/order/reposirory/order_repsitory_impl.dart';
 import 'package:e_commerce/data/order/source/order_firebase_service.dart';
 import 'package:e_commerce/data/product/repository/product_repository_impl.dart';
-import 'package:e_commerce/data/product/source/product_firebase_service.dart';
+import 'package:e_commerce/data/product/source/product_firebase_data_source_impl.dart';
+import 'package:e_commerce/data/product/source/product_remote_data_source.dart';
 import 'package:e_commerce/domain/auth/repository/auth_repository.dart';
 import 'package:e_commerce/domain/auth/usecases/get_ages.dart';
 import 'package:e_commerce/domain/auth/usecases/get_user.dart';
@@ -38,7 +39,9 @@ Future<void> initializeDependencies() async {
   //Services
   sl.registerSingleton<AuthFirebaseService>(AuthFirebaseServiceImpl());
   sl.registerSingleton<CategoryFirebaseService>(CategoryFirebaseServiceImpl());
-  sl.registerSingleton<ProductFirebsaeService>(ProductFirebsaeServiceImpl());
+  sl.registerSingleton<ProductRemoteDataSource>(
+    ProductFirebaseDataSourceImpl(),
+  );
   sl.registerSingleton<OrderFirebaseService>(OrderFirebaseServiceImpl());
   //Repositories
   sl.registerSingleton<AuthRepository>(AuthRepositoryImpl());

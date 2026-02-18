@@ -25,7 +25,7 @@ class ECommerceApp extends StatelessWidget {
             minTextAdapt: true,
             splitScreenMode: true,
             child: MaterialApp.router(
-              locale: Locale(state.currentLanguageCode),
+              // locale: Locale(state.currentLanguageCode),
               localizationsDelegates: [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,

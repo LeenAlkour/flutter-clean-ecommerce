@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
 import 'package:e_commerce/domain/product/usecase/add_or_remove_favorite_product.dart';
 import 'package:e_commerce/domain/product/usecase/is_favorite.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 
 class FavoriteIconCubit extends Cubit<bool> {
   FavoriteIconCubit() : super(false);

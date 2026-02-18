@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:e_commerce/domain/auth/usecases/get_user.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_info_display_state.dart';

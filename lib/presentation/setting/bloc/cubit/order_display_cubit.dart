@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:e_commerce/domain/order/entities/order.dart';
 import 'package:e_commerce/domain/order/usecase/get_orders.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'order_display_state.dart';

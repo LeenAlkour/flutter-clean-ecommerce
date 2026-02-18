@@ -5,7 +5,7 @@ import 'package:e_commerce/data/order/models/order_registration_req.dart';
 import 'package:e_commerce/data/order/models/product_ordered.dart';
 import 'package:e_commerce/data/order/source/order_firebase_service.dart';
 import 'package:e_commerce/domain/order/repository/order.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 
 class OrderRepositoryImpl implements OrderRepository {
   @override

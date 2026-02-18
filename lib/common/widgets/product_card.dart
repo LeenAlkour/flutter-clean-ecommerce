@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/core/routing/routes.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
 import 'package:flutter/material.dart';

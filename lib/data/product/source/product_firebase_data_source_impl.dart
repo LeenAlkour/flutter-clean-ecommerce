@@ -1,20 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_commerce/data/product/source/product_remote_data_source.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:e_commerce/data/product/models/product_model.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
-abstract class ProductFirebsaeService {
-  Future<Either> getTopSelling();
-  Future<Either> getNewIn();
-  Future<Either> getProductsByCategoryId(String categoryId);
-  Future<Either> getProductsByTitle(String title);
-  Future<Either> addOrRemoveFavoriteProduct(ProductEntity product);
-  Future<bool> isFavorite(String productId);
-  Future<Either> getFavoriteProducts();
-}
-
-class ProductFirebsaeServiceImpl extends ProductFirebsaeService {
+class ProductFirebaseDataSourceImpl implements ProductRemoteDataSource {
   @override
   Future<Either> getTopSelling() async {
     try {
@@ -80,7 +71,7 @@ class ProductFirebsaeServiceImpl extends ProductFirebsaeService {
   Future<Either> addOrRemoveFavoriteProduct(ProductEntity product) async {
     try {
       var user = FirebaseAuth.instance.currentUser;
-      
+
       var products = await FirebaseFirestore.instance
           .collection('users')
           .doc(user!.uid)
@@ -122,9 +113,9 @@ class ProductFirebsaeServiceImpl extends ProductFirebsaeService {
       return false;
     }
   }
-  
+
   @override
-  Future<Either> getFavoriteProducts() async{
+  Future<Either> getFavoriteProducts() async {
     try {
       var user = FirebaseAuth.instance.currentUser;
 
@@ -137,6 +128,6 @@ class ProductFirebsaeServiceImpl extends ProductFirebsaeService {
       return Right(result.docs.map((e) => e.data()).toList());
     } catch (e) {
       return Left('Please try again');
-    } 
+    }
   }
 }

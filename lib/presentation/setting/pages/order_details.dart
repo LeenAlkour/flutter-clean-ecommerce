@@ -2,7 +2,7 @@ import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
 import 'package:e_commerce/core/configs/theme/app_colors.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/core/routing/routes.dart';
 import 'package:e_commerce/domain/order/entities/order.dart';
 import 'package:e_commerce/presentation/setting/widgets/order_item_card.dart';

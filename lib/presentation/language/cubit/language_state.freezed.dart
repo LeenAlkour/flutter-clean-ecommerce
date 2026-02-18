@@ -87,11 +87,11 @@ extension LanguageStatePatterns on LanguageState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LanguageState value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _LanguageState() when $default != null:
-return $default(_that);case _:
+case _Initial() when initial != null:
+return initial(_that);case _:
   return orElse();
 
 }
@@ -109,11 +109,11 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LanguageState value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,}){
 final _that = this;
 switch (_that) {
-case _LanguageState():
-return $default(_that);case _:
+case _Initial():
+return initial(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -130,11 +130,11 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LanguageState value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,}){
 final _that = this;
 switch (_that) {
-case _LanguageState() when $default != null:
-return $default(_that);case _:
+case _Initial() when initial != null:
+return initial(_that);case _:
   return null;
 
 }
@@ -151,10 +151,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String currentLanguageCode,  bool isLoading)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String currentLanguageCode,  bool isLoading)?  initial,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _LanguageState() when $default != null:
-return $default(_that.currentLanguageCode,_that.isLoading);case _:
+case _Initial() when initial != null:
+return initial(_that.currentLanguageCode,_that.isLoading);case _:
   return orElse();
 
 }
@@ -172,10 +172,10 @@ return $default(_that.currentLanguageCode,_that.isLoading);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String currentLanguageCode,  bool isLoading)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String currentLanguageCode,  bool isLoading)  initial,}) {final _that = this;
 switch (_that) {
-case _LanguageState():
-return $default(_that.currentLanguageCode,_that.isLoading);case _:
+case _Initial():
+return initial(_that.currentLanguageCode,_that.isLoading);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +192,10 @@ return $default(_that.currentLanguageCode,_that.isLoading);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String currentLanguageCode,  bool isLoading)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String currentLanguageCode,  bool isLoading)?  initial,}) {final _that = this;
 switch (_that) {
-case _LanguageState() when $default != null:
-return $default(_that.currentLanguageCode,_that.isLoading);case _:
+case _Initial() when initial != null:
+return initial(_that.currentLanguageCode,_that.isLoading);case _:
   return null;
 
 }
@@ -206,24 +206,24 @@ return $default(_that.currentLanguageCode,_that.isLoading);case _:
 /// @nodoc
 
 
-class _LanguageState implements LanguageState {
-  const _LanguageState({required this.currentLanguageCode, required this.isLoading});
+class _Initial implements LanguageState {
+  const _Initial({this.currentLanguageCode = 'en', this.isLoading = false});
   
 
-@override final  String currentLanguageCode;
-@override final  bool isLoading;
+@override@JsonKey() final  String currentLanguageCode;
+@override@JsonKey() final  bool isLoading;
 
 /// Create a copy of LanguageState
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$LanguageStateCopyWith<_LanguageState> get copyWith => __$LanguageStateCopyWithImpl<_LanguageState>(this, _$identity);
+_$InitialCopyWith<_Initial> get copyWith => __$InitialCopyWithImpl<_Initial>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LanguageState&&(identical(other.currentLanguageCode, currentLanguageCode) || other.currentLanguageCode == currentLanguageCode)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial&&(identical(other.currentLanguageCode, currentLanguageCode) || other.currentLanguageCode == currentLanguageCode)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading));
 }
 
 
@@ -232,15 +232,15 @@ int get hashCode => Object.hash(runtimeType,currentLanguageCode,isLoading);
 
 @override
 String toString() {
-  return 'LanguageState(currentLanguageCode: $currentLanguageCode, isLoading: $isLoading)';
+  return 'LanguageState.initial(currentLanguageCode: $currentLanguageCode, isLoading: $isLoading)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$LanguageStateCopyWith<$Res> implements $LanguageStateCopyWith<$Res> {
-  factory _$LanguageStateCopyWith(_LanguageState value, $Res Function(_LanguageState) _then) = __$LanguageStateCopyWithImpl;
+abstract mixin class _$InitialCopyWith<$Res> implements $LanguageStateCopyWith<$Res> {
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) _then) = __$InitialCopyWithImpl;
 @override @useResult
 $Res call({
  String currentLanguageCode, bool isLoading
@@ -251,17 +251,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$LanguageStateCopyWithImpl<$Res>
-    implements _$LanguageStateCopyWith<$Res> {
-  __$LanguageStateCopyWithImpl(this._self, this._then);
+class __$InitialCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(this._self, this._then);
 
-  final _LanguageState _self;
-  final $Res Function(_LanguageState) _then;
+  final _Initial _self;
+  final $Res Function(_Initial) _then;
 
 /// Create a copy of LanguageState
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? currentLanguageCode = null,Object? isLoading = null,}) {
-  return _then(_LanguageState(
+  return _then(_Initial(
 currentLanguageCode: null == currentLanguageCode ? _self.currentLanguageCode : currentLanguageCode // ignore: cast_nullable_to_non_nullable
 as String,isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,

@@ -2,7 +2,7 @@ import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
 import 'package:e_commerce/core/configs/theme/app_colors.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/core/routing/routes.dart';
 import 'package:e_commerce/presentation/language/cubit/language_cubit.dart';
 import 'package:flutter/material.dart';

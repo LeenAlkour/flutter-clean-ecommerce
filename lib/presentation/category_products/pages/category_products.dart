@@ -2,11 +2,11 @@ import 'package:e_commerce/common/bloc/product/cubit/products_display_cubit.dart
 import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
 import 'package:e_commerce/common/widgets/product_card.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/domain/category/entity/category_entity.dart';
 import 'package:e_commerce/domain/product/entity/product_entity.dart';
 import 'package:e_commerce/domain/product/usecase/get_products_by_category_id.dart';
-import 'package:e_commerce/service_locator.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

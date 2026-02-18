@@ -12,7 +12,7 @@ class LanguageCubit extends Cubit<LanguageState> {
       emit(state.copyWith(isLoading: true));
 
       final savedLanguageCode = await storage.getLanguage();
-      final languageCode = savedLanguageCode ?? 'en';
+      final languageCode = savedLanguageCode;
 
       emit(state.copyWith(currentLanguageCode: languageCode, isLoading: false));
     } catch (e) {

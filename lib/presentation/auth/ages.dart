@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/configs/theme/styles.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/presentation/auth/bloc/cubit/age_selection_cubit.dart';
 import 'package:e_commerce/presentation/auth/bloc/cubit/cubit/ages_display_cubit.dart';
 import 'package:flutter/material.dart';

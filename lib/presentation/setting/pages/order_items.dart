@@ -1,6 +1,6 @@
 import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/domain/order/entities/product_ordered.dart';
 import 'package:e_commerce/presentation/setting/widgets/order_item_card.dart';
 import 'package:flutter/material.dart';

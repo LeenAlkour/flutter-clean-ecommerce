@@ -1,6 +1,6 @@
 
 import 'package:e_commerce/common/bloc/button/cubit/button_state_cubit.dart';
-import 'package:e_commerce/common/dialogs.dart';
+import 'package:e_commerce/common/widgets/dialogs.dart';
 import 'package:e_commerce/common/helper/product/product_price.dart';
 import 'package:e_commerce/common/widgets/button/custom_reactive_button.dart';
 import 'package:e_commerce/core/configs/theme/app_colors.dart';

@@ -2,7 +2,7 @@ import 'package:e_commerce/common/widgets/app_bar/custom_app_bar.dart';
 import 'package:e_commerce/core/configs/assets/app_vectors.dart';
 import 'package:e_commerce/core/configs/theme/styles.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
-import 'package:e_commerce/core/helper/spacing/spacing.dart';
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/domain/order/entities/product_ordered.dart';
 import 'package:e_commerce/presentation/cart/bloc/cubit/cart_product_display_cubit.dart';
 import 'package:e_commerce/presentation/cart/widgets/check_out.dart';
