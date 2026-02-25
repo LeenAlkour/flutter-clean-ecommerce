@@ -38,6 +38,7 @@ class AddToBag extends StatelessWidget {
       child: Padding(
         padding:  EdgeInsets.all(16.0.sp),
         child: CustomReactiveButton(
+          
           onPressed: () {
             context.read<ButtonStateCubit>().execute(
               usecase: AddToCartUseCase(),

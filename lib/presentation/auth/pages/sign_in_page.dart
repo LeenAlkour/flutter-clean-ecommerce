@@ -112,21 +112,25 @@ class SignInPage extends StatelessWidget {
   }
 
   _signInWithGoogle(BuildContext context) {
-    return CustomReactiveButton(
-      color: Theme.of(context).colorScheme.secondary,
-      radius: 4,
-      onPressed: () {
-        print('Signing in with Google...');
-        context.read<ButtonStateCubit>().execute(
-          usecase: SigninWithGoogleUseCase(),
+    return Builder(
+      builder: (context) {
+        return CustomReactiveButton(
+          color: Theme.of(context).colorScheme.secondary,
+          radius: 4,
+          onPressed: () {
+            print('Signing in with Google...');
+            context.read<ButtonStateCubit>().execute(
+              usecase: SigninWithGoogleUseCase(),
+            );
+          },
+          content: Row(
+            children: [
+              Image.asset('assets/icons/google.png', width: 25.w, height: 25.h),
+              Text(context.get('auth.sign_in_with_google')),
+            ],
+          ),
         );
-      },
-      content: Row(
-        children: [
-          Image.asset('assets/icons/google.png', width: 25.w, height: 25.h),
-          Text(context.get('auth.sign_in_with_google')),
-        ],
-      ),
+      }
     );
   }
 }

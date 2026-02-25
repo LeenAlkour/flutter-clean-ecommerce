@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:e_commerce/core/networking/apis.dart';
 import 'package:e_commerce/data/auth/models/user_creation-req.dart';
 import 'package:e_commerce/data/auth/models/user_signin_req.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,22 +15,15 @@ abstract class AuthFirebaseService {
   Future<Either> sendPasswordResetEmail(String email);
   Future<bool> isLoggedIn();
   Future<Either> getUser();
-    Future<Either> signInWithGoogle();
+  Future<Either> signInWithGoogle();
 }
 
 class AuthFirebaseServiceImpl implements AuthFirebaseService {
-  late final FirebaseApp app;
-  late final FirebaseAuth auth;
-   late final GoogleSignIn googleSignIn;
-  AuthFirebaseServiceImpl() {
-    app = Firebase.app();
-    auth = FirebaseAuth.instanceFor(app: app);
-    googleSignIn = GoogleSignIn.instance; 
-  }
+  
   @override
   Future<Either> signIn(UserSigninReq user) async {
     try {
-      await auth.signInWithEmailAndPassword(
+      await Apis.auth.signInWithEmailAndPassword(
         email: user.email,
         password: user.password,
       );
@@ -51,7 +45,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
   Future<Either> signUp(UserCreationReq user) async {
     try {
-      var result = await auth.createUserWithEmailAndPassword(
+      var result = await Apis.auth.createUserWithEmailAndPassword(
         email: user.email,
         password: user.password,
       );
@@ -65,6 +59,9 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
             'password': user.password,
             'age': user.age,
             'gender': user.gender,
+            'image': '',
+            'userId': result.user?.uid,
+
           });
       return Right("Sign up was successful");
     } on FirebaseAuthException catch (e) {
@@ -81,8 +78,8 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
   Future<Either> signOut() async {
     try {
-      await googleSignIn.signOut();
-      await auth.signOut();
+      await Apis.googleSignIn.signOut();
+      await Apis.auth.signOut();
       return Right("Sign out was successful");
     } catch (e) {
       return Left(e.toString());
@@ -102,7 +99,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
   Future<Either> sendPasswordResetEmail(String email) async {
     try {
-      await auth.sendPasswordResetEmail(email: email);
+      await Apis.auth.sendPasswordResetEmail(email: email);
       return Right("Password reset email sent");
     } catch (e) {
       return Left("Please try again");
@@ -111,7 +108,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
 
   @override
   Future<bool> isLoggedIn() async {
-    if (auth.currentUser != null) {
+    if (Apis.auth.currentUser != null) {
       return true;
     } else {
       return false;
@@ -121,22 +118,23 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
   Future<Either> getUser() async {
     try {
-      var currentUser = auth.currentUser;
-      var  userData =await FirebaseFirestore.instance
+      var currentUser = Apis.auth.currentUser;
+      var userData = await Apis.firestore
           .collection('users')
           .doc(currentUser?.uid)
-          .get().then((value)=>value.data());
+          .get()
+          .then((value) => value.data());
       return Right(userData);
     } catch (e) {
       return Left("Please try again");
     }
   }
-  
-@override
+
+  @override
   Future<Either> signInWithGoogle() async {
     try {
       // 1️⃣ اختيار حساب Google
-      final GoogleSignInAccount? googleUser = await googleSignIn.authenticate();
+      final GoogleSignInAccount? googleUser = await Apis.googleSignIn.authenticate();
 
       if (googleUser == null) {
         return Left("Google sign in was cancelled");
@@ -153,7 +151,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
       );
 
       // 4️⃣ تسجيل الدخول في Firebase
-      final UserCredential userCredential = await auth.signInWithCredential(
+      final UserCredential userCredential = await Apis.auth.signInWithCredential(
         credential,
       );
 
@@ -178,8 +176,13 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
                   user.displayName!.split(" ").length > 1
               ? user.displayName!.split(" ").last
               : "",
+            'password': 'lolokholoudK1',
+            'age': '15-17',
+            'gender': 1,
+
           'image': user.photoURL,
-          'createdAt': Timestamp.now(),
+          'userId': user.uid,
+
         });
       }
 
@@ -190,5 +193,4 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
       return Left(e.toString());
     }
   }
-
 }

@@ -60,11 +60,11 @@ class OrderDetailsPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: status.done
-                          ? AppColors.primaryDark
+                          ? Theme.of(context).colorScheme.primary
                           : Colors.grey.shade300,
                       border: Border.all(
                         color: status.done
-                            ? AppColors.primaryDark
+                            ? Theme.of(context).colorScheme.primary
                             : Colors.grey.shade400,
                         width: 2.w,
                       ),
@@ -78,7 +78,7 @@ class OrderDetailsPage extends StatelessWidget {
                       height: 40.h,
                       width: 2.w,
                       color: status.done
-                          ? AppColors.primaryDark
+                          ? Theme.of(context).colorScheme.primary
                           : Colors.grey.shade300,
                     ),
                 ],
@@ -92,7 +92,7 @@ class OrderDetailsPage extends StatelessWidget {
                       status.title,
                       style: AppTextStyles.font16SemiBold(
                         color: status.done
-                            ? AppColors.primaryDark
+                            ? Theme.of(context).colorScheme.primary
                             : Colors.grey.shade600,
                       ),
                     ),
@@ -128,7 +128,8 @@ class OrderDetailsPage extends StatelessWidget {
               },
               child: Text(
                 "${context.get('home.see_all')} (${order.products.length})",
-                style: AppTextStyles.font14Medium(color: AppColors.primaryDark),
+                style: AppTextStyles.font14Medium(color: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ),
           ],
@@ -178,7 +179,7 @@ class OrderDetailsPage extends StatelessWidget {
                   Icon(
                     Icons.location_on_outlined,
                     size: 20.sp,
-                    color: AppColors.primaryDark,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   horizontalSpace(8),
                   Text(
@@ -218,7 +219,7 @@ class OrderDetailsPage extends StatelessWidget {
               // _buildSummaryRow("Shipping", order.),
               // _buildSummaryRow("Tax", order.totalPrice),
               // Divider(height: 24.h, color: Colors.grey.shade300),
-              _buildSummaryRow(context.get('order.total'), order.totalPrice, isTotal: true),
+              _buildSummaryRow(context.get('order.total'), order.totalPrice,context, isTotal: true),
             ],
           ),
         ),
@@ -226,7 +227,7 @@ class OrderDetailsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildSummaryRow(String label, double amount, {bool isTotal = false}) {
+  Widget _buildSummaryRow(String label, double amount, BuildContext context,{bool isTotal = false}) {
     return Padding(
       padding: EdgeInsets.only(bottom: 8.h),
       child: Row(
@@ -241,7 +242,8 @@ class OrderDetailsPage extends StatelessWidget {
           Text(
             "\$${amount.toStringAsFixed(2)}",
             style: isTotal
-                ? AppTextStyles.font18Bold(color: AppColors.primaryDark)
+                ? AppTextStyles.font18Bold(color: Theme.of(context).colorScheme.primary,
+                  )
                 : AppTextStyles.font14Medium(),
           ),
         ],

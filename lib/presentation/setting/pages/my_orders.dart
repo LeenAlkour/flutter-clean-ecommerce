@@ -83,12 +83,12 @@ class MyOrdersPage extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(8.sp),
                           decoration: BoxDecoration(
-                            color: AppColors.primaryDark.withOpacity(0.1),
+                            color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
                             borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Icon(
                             Icons.receipt_rounded,
-                            color: AppColors.primaryDark,
+                            color: Theme.of(context).colorScheme.primary,
                             size: 20.sp,
                           ),
                         ),
@@ -159,7 +159,7 @@ class MyOrdersPage extends StatelessWidget {
                         Text(
                           '\$${order.totalPrice.toStringAsFixed(2)}',
                           style: AppTextStyles.font16SemiBold(
-                            color: AppColors.primaryDark,
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                       ],
@@ -195,7 +195,7 @@ class MyOrdersPage extends StatelessWidget {
             onPressed: () {
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryDark,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               foregroundColor: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
               shape: RoundedRectangleBorder(
@@ -230,7 +230,7 @@ class MyOrdersPage extends StatelessWidget {
               context.read<OrderDisplayCubit>().displayOrders();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryDark,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               foregroundColor: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
               shape: RoundedRectangleBorder(

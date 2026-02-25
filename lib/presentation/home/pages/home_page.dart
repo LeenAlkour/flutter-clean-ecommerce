@@ -1,3 +1,4 @@
+import 'package:e_commerce/common/widgets/spacing/spacing.dart';
 import 'package:e_commerce/core/routing/routes.dart';
 import 'package:e_commerce/presentation/home/widgets/categories.dart';
 import 'package:e_commerce/presentation/home/widgets/header.dart';
@@ -25,7 +26,10 @@ class HomePage extends StatelessWidget {
             ),
             Categories(),
             TopSelling(),
+            verticalSpace(20),
             NewIn(),
+            verticalSpace(20),
+
           ],
         ),
       ),

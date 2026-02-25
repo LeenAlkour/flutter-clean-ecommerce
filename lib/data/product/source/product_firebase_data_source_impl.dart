@@ -22,16 +22,24 @@ class ProductFirebaseDataSourceImpl implements ProductRemoteDataSource {
 
   @override
   Future<Either> getNewIn() async {
+  
     try {
       final result = await FirebaseFirestore.instance
           .collection('Products')
           .where(
             'createdDate',
-            isGreaterThanOrEqualTo: DateTime.now().subtract(
-              const Duration(days: 1),
+            isGreaterThanOrEqualTo: Timestamp.fromDate(
+              DateTime.now().subtract(const Duration(days: 20)),
             ),
           )
           .get();
+           print(
+        "_________________________________________________________________________",
+      );
+      print(result.docs.map((e) => e.data()).toList());
+      print(
+        "_________________________________________________________________________",
+      );
 
       return Right(result.docs.map((e) => e.data()).toList());
     } catch (e) {

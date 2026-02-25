@@ -84,13 +84,13 @@
   "home": {
     "search_for_products": "ابحث عن المنتجات",
     "welcome": "مرحباً",
-    "new_products": "منتجات جديدة",
+    "new_products": "المنتجات الجديدة",
     "categories": "الفئات",
     "search": "ابحث عن المنتجات...",
     "filter": "تصفية",
     "sort": "ترتيب",
     "no_products": "لم يتم العثور على منتجات",
-    "top_selling": "الأكثر مبيعاً",
+    "top_selling": " المنتجات الأكثر مبيعاً",
     "see_all": "عرض الكل"
 
   },

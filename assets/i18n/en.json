@@ -98,6 +98,7 @@
     "total": "Total",
     "subtotal": "Subtotal",
     "shipping": "Shipping",
+    "check_out": "Check Out",
     "tax": "Tax",
     "checkout": "Checkout",
     "continue_shopping": "Continue Shopping",
@@ -123,6 +124,8 @@
     "colors": "Colors",
     "quantity": "Quantity",
     "sizes": "Sizes",
+    "size": "Size",
+    "color": "Color",
     "out_of_stock": "Out of Stock",
     "shop_by_categories": "Shop by Categories"
   },
